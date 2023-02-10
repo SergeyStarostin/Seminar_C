@@ -13,5 +13,3 @@ while (count <= number)
     System.Console.Write($"{count}, ");
     count ++; // count = count +1
 }
-
-
