@@ -36,4 +36,3 @@ if (weekday < 1 || weekday > 7)
 {
  System.Console.WriteLine ("не правильно задан номер недели");   
 }
-
