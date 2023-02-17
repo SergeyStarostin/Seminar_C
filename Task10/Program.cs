@@ -6,18 +6,18 @@ int InputInt(string message)                //Название метода
 {
     System.Console.Write($"{message}> ");   //Вывод приглашения ко вводу
     int value;                              //Инициализация переменной
-    if (int.TryParse(Console.ReadLine(), out int value))//Проверка условия корректности ввода+ввод со строки
+    if (int.TryParse(Console.ReadLine(), out value)) //Проверка условия корректности ввода+ввод со строки
     //Если конвертация строки прошла правильно, то попадаем в ветку, которая находится в скобках
     //после наименования функции. Если да - то выдает первое значение(ввод со строки).
     //Нет - второе (out)
     {
         return value;
     }
-    System.Console.WriteLine("Вы ввели не число");
+    System.Console.WriteLine($"Вы ввели не число");
     Environment.Exit(1); //Если TryParse не сработало, выходим из программы (Exit) с кодом 1
     return 0;            //Нужна для компиляции.
 }
-bool ValidateCoords(int x, int y)
+bool ValidateCoords(int x, int y) //Функция для проверки того, что X и Y не равны 0
 {
     if (x == 0 || y == 0)
     {
@@ -31,17 +31,17 @@ int GetQuorter(int x, int y)
 {
     if (x > 0 && y > 0)
     {
-        return 1;
+        return 1;   //вывод номера четверти - 1
     }
     if (x < 0 && y > 0)
     {
-        return 2;
+        return 2;   //вывод номера четверти - 2
     }
     if (x < 0 && y < 0)
     {
-        return 3;
+        return 3;   //вывод номера четверти - 3
     }
-    return 4;
+    return 4;       //вывод номера четверти - 4
 }
 int x = InputInt("Введите X");
 int y = InputInt("Введите Y");
