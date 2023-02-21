@@ -2,23 +2,23 @@
 // 4 -> 24 
 // 5 -> 120
 
+
 int Inputint(string prompt)
 {
     System.Console.Write($"{prompt}  --> ");
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int GetNumber(int num)
+int GetNumber(int num)   // метод который считает количество цифр в числе
 {
-    int countNumber = 0;
-    while (num > 0)
+    int countNumber = 0; // счетчик цифр
+    while (num > 0)      // ело цикла будет выполняться пока число не станет 0
     {
-        num /= 10;
-        countNumber++;
+        num /= 10;       // делим число на 10 и отсекаем последнюю цифру числа
+        countNumber++;   // прибовляем счетчик который подсчитывает количество цифр 
     }
-    return countNumber;
+    return countNumber;  // возвращаем значение счетчика как результат метода
 }
 
-int userNumber = Inputint("Введите число ");
-Console.WriteLine($"Количество цифр в числе {userNumber} = {GetNumber(userNumber)}");
-
+int userNumber = Inputint("Введите число "); // вызываем метод Inputint и кладем значение в переменную
+Console.WriteLine($"Количество цифр в числе {userNumber} = {GetNumber(userNumber)}"); // выводим информацию пользователю и вызываем метод
