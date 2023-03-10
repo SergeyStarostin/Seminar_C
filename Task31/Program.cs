@@ -31,16 +31,16 @@ void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        System.Console.WriteLine();
+        Console.WriteLine();
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            System.Console.Write($"{array[i, j]}\t");
+            Console.Write($"{array[i, j]}\t");
         }
     }
-    System.Console.WriteLine();
+    Console.WriteLine();
 }
 
-(int, int) FindeMinIndexMatrix(int[,] array)
+(int, int) FindeMinArray(int[,] array)
 {
     int mini = 0;
     int minj = 0;
@@ -57,28 +57,23 @@ void PrintArray(int[,] array)
 
 int[,] DeliteMInElement(int[,]array, int mini, int minj)
 {
-    int[,]result=new int[array.GetLength(0)-1, array.GetLength(1)-1];
-   for (int i = 0; i < array.GetLength(0); i++)
-   {
+    int[,] result = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
     for (int j = 0; j < array.GetLength(1); j++)
     {
-        if (i==mini||j==minj)continue;
-        int k= i;
+        if (i == mini || j == minj ) continue;
+        int k = i;
         int l = j; 
-        if (i>mini) k--; 
-        if (j>minj) l--;
-        result [k,l]=array[i,j];
+        if (i > mini) k--; 
+        if (j > minj) l--;
+        result [k, l] = array[i, j];
     } 
-   }
-   return result;
+    }
+    return result;
 }
 
-int[,]matrix=GenerateArray(4,4);
+int[,] matrix = GenerateArray(4, 4);
 PrintArray(matrix);
-(int mini, int minj)=FindeMinIndexMatrix(matrix);
+(int mini, int minj) = FindeMinArray(matrix);
 PrintArray(DeliteMInElement(matrix, mini, minj));
-
-
-
-
-
